@@ -1,3 +1,5 @@
+import { convertTempToCelsius, convertTempToFahrenheit } from './tempMethods';
+
 const getWeather = async (city) => {
   const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3a907874d0e5af1a38cfac90720e9f08`);
 
@@ -9,21 +11,6 @@ const getWeather = async (city) => {
 };
 
 const displayWeatherInfo = document.getElementById('displayWeatherCard');
-
-const tempDiv = document.getElementById('tempInDegrees');
-
-const convertTempToCelsius = (absoluteTemp) => {
-  tempDiv.textContent = '';
-  const celciusTemp = (absoluteTemp - 273.15).toFixed(2);
-  tempDiv.textContent = `The temperature in degrees Celsius is ${celciusTemp}`;
-};
-
-const convertTempToFahrenheit = (absoluteTemp) => {
-  tempDiv.textContent = '';
-  const celciusTemp = (absoluteTemp - 273.15);
-  const fahrenheitTemp = ((celciusTemp * (9 / 5)) + 32).toFixed(2);
-  tempDiv.textContent = `The temperature in degrees Fahrenheit is ${fahrenheitTemp}`;
-};
 
 const display = (data) => {
   const absoluteTemp = data.main.temp;
