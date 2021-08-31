@@ -12,20 +12,20 @@ const displayWeatherInfo = document.getElementById('displayWeatherCard');
 
 const tempDiv = document.getElementById('tempInDegrees');
 
-function convertTempToCelsius(absoluteTemp) {
+const convertTempToCelsius = (absoluteTemp) => {
   tempDiv.textContent = '';
   const celciusTemp = (absoluteTemp - 273.15).toFixed(2);
   tempDiv.textContent = `The temperature in degrees Celsius is ${celciusTemp}`;
-}
+};
 
-function convertTempToFahrenheit(absoluteTemp) {
+const convertTempToFahrenheit = (absoluteTemp) => {
   tempDiv.textContent = '';
   const celciusTemp = (absoluteTemp - 273.15);
   const fahrenheitTemp = ((celciusTemp * (9 / 5)) + 32).toFixed(2);
   tempDiv.textContent = `The temperature in degrees Fahrenheit is ${fahrenheitTemp}`;
-}
+};
 
-function display(data) {
+const display = (data) => {
   const absoluteTemp = data.main.temp;
   const mainWeather = data.weather[0].main;
   const weatherDescription = data.weather[0].description;
@@ -49,11 +49,11 @@ function display(data) {
   div.append(h3, p1, celsiusBtn, fahrenheitBtn);
   displayWeatherInfo.textContent = '';
   displayWeatherInfo.appendChild(div);
-}
+};
 
-function displayError(errorMessage) {
+const displayError = (errorMessage) => {
   displayWeatherInfo.textContent = errorMessage;
-}
+};
 
 const checkWeatherForm = document.getElementById('cityWeatherForm');
 checkWeatherForm.addEventListener('submit', (e) => {
