@@ -10,7 +10,20 @@
 </head>
 <body>
   <div class="container">
+    <header>
+      <h1>Weather in your city</h1>
+    </header>
+    <main>
+      <form autocomplete="off" class="m-2" id="createForm">
+        <div class="form-group">
+          <label for="city">City name</label>
+          <input type="text" class="form-control" id="city" aria-describedby="city name" placeholder="Enter city name" required>
+        </div>
+        <button class="btn btn-success" type="submit" id="createBookBtn">SEARCH WEATHER</button>
+      </form>
 
+    </main>
+    
   </div>
   
 </body>
