@@ -12,12 +12,17 @@ async function getWeather(city) {
   return data;
 };
 
-getWeather('Kampala')
-  .then((data) => {
-    console.log(data);
-  }).catch((err) => {
-    console.log(err)
-  });
+const checkWeatherForm = document.getElementById('cityWeatherForm');
+checkWeatherForm.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-
+  const cityValue = document.getElementById('city').value;
+  
+  getWeather(cityValue)
+    .then((data) => {
+      console.log(data);
+    }).catch((err) => {
+      console.log(err)
+    });
+});
 
