@@ -14,6 +14,13 @@ function convertTempToCelsius(absoluteTemp) {
   tempDiv.textContent = `The temperature in degrees Celsius is ${celciusTemp}`;
 }
 
+function convertTempToFahrenheit(absoluteTemp) {
+  tempDiv.textContent = '';
+  const celciusTemp = (absoluteTemp - 273.15);
+  const fahrenheitTemp = ((celciusTemp * 9/5) + 32).toFixed(2);
+  tempDiv.textContent = `The temperature in degrees Fahrenheit is ${fahrenheitTemp}`;
+}
+
 function display(data) {
   const absoluteTemp = data.main.temp;
   const mainWeather = data.weather[0].main;
@@ -29,7 +36,13 @@ function display(data) {
   celsiusBtn.addEventListener('click', () => {
     convertTempToCelsius(absoluteTemp);
   });
-  div.append(h3, p1, celsiusBtn);
+  const fahrenheitBtn = document.createElement('button');
+  fahrenheitBtn.textContent = 'Temp in degrees Fahrenheit';
+  fahrenheitBtn.classList.add('btn','btn-primary','m-1');
+  fahrenheitBtn.addEventListener('click', () => {
+    convertTempToFahrenheit(absoluteTemp);
+  });
+  div.append(h3, p1, celsiusBtn, fahrenheitBtn);
   displayWeatherInfo.textContent = '';
   displayWeatherInfo.appendChild(div);
 };
