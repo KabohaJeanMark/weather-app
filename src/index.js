@@ -10,7 +10,7 @@ const tempDiv = document.getElementById('tempInDegrees');
 
 function convertTempToCelsius(absoluteTemp) {
   tempDiv.textContent = '';
-  const celciusTemp = absoluteTemp - 273;
+  const celciusTemp = (absoluteTemp - 273.15).toFixed(2);
   tempDiv.textContent = `The temperature in degrees Celsius is ${celciusTemp}`;
 }
 
