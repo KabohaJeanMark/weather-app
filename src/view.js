@@ -1,11 +1,17 @@
 import { convertTempToCelsius, convertTempToFahrenheit } from './temp';
+import getGif from './fetchGifDisplay';
 
 const displayWeatherInfo = document.getElementById('displayWeatherCard');
 
-const display = (data) => {
+const gifBody = document.querySelector('img');
+
+const display = async (data) => {
   const absoluteTemp = data.main.temp;
   const mainWeather = data.weather[0].main;
   const weatherDescription = data.weather[0].description;
+  const gifData = await getGif(weatherDescription);
+  const imgUrl = gifData.data.images.original.url;
+  gifBody.src = imgUrl;
   const div = document.createElement('div');
   const h3 = document.createElement('h3');
   h3.textContent = mainWeather;
