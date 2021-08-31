@@ -25,7 +25,9 @@ function display(data) {
   p1.textContent = `${weatherDescription} with an Absolute temp in Kelvin of ${absoluteTemp}`;
   const celsiusBtn = document.createElement('button');
   celsiusBtn.textContent = 'Temp in degrees Celsius';
-  celsiusBtn.addEventListener('click', convertTempToCelsius(absoluteTemp));
+  celsiusBtn.addEventListener('click', () => {
+    convertTempToCelsius(absoluteTemp);
+  });
   div.append(h3, p1, celsiusBtn);
   displayWeatherInfo.textContent = '';
   displayWeatherInfo.appendChild(div);
