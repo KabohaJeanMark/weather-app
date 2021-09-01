@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../src/style.css">
+  <title>Weather App</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather in your city</h1>
+    </header>
+    <main>
+      <form autocomplete="off" class="m-2" id="cityWeatherForm">
+        <div class="form-group">
+          <label for="city">City name</label>
+          <input type="text" class="form-control" id="city" aria-describedby="city name" placeholder="Please enter full city name" required>
+        </div>
+        <button class="btn btn-success" type="submit" id="createBookBtn">SEARCH WEATHER</button>
+      </form>
+
+      <div id="displayWeatherCard">
+
+      </div>
+      <div id="tempInDegrees">
+
+      </div>
+      <img src="" alt="" class="img-fluid">
+    </main>
+    
+  </div>
+  
+</body>
+<script src="main.js"></script>
+</html>
